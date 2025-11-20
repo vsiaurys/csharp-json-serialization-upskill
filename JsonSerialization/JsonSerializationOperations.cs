@@ -11,42 +11,31 @@ public static class JsonSerializationOperations
 {
     public static string SerializeObjectToJson(object obj)
     {
-        return JsonSerializer.Serialize(obj);
+        throw new NotImplementedException();
     }
 
     public static T? DeserializeJsonToObject<T>(string json)
     {
-        return JsonSerializer.Deserialize<T>(json);
+        throw new NotImplementedException();
     }
 
     public static string SerializeCompanyObjectToJson(object obj)
     {
-        return JsonSerializer.Serialize(obj);
+        throw new NotImplementedException();
     }
 
     public static T? DeserializeCompanyJsonToObject<T>(string json)
     {
-        return JsonSerializer.Deserialize<T>(json);
+        throw new NotImplementedException();
     }
 
     public static string SerializeDictionary(Company obj)
     {
-        if (obj == null)
-        {
-            throw new ArgumentNullException(nameof(obj), "Parameter 'obj' cannot be null.");
-        }
-
-        return JsonSerializer.Serialize(obj.Domains, new JsonSerializerOptions
-        {
-            DictionaryKeyPolicy = JsonNamingPolicy.CamelCase,
-        });
+        throw new NotImplementedException();
     }
 
     public static string SerializeEnum(Company obj)
     {
-        return JsonSerializer.Serialize(obj, new JsonSerializerOptions
-        {
-            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) },
-        });
+        throw new NotImplementedException();
     }
 }
