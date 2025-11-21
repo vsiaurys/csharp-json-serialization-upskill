@@ -11,7 +11,7 @@ public static class JsonSerializationOperations
 {
     public static string SerializeObjectToJson(object obj)
     {
-        throw new NotImplementedException();
+        return JsonSerializer.Serialize(obj);
     }
 
     public static T? DeserializeJsonToObject<T>(string json)
