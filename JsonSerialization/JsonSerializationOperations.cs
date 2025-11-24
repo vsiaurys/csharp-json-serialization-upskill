@@ -44,6 +44,9 @@ public static class JsonSerializationOperations
 
     public static string SerializeEnum(Company obj)
     {
-        throw new NotImplementedException();
+        return JsonSerializer.Serialize(obj, new JsonSerializerOptions
+        {
+            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) },
+        });
     }
 }
