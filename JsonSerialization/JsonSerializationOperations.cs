@@ -31,7 +31,15 @@ public static class JsonSerializationOperations
 
     public static string SerializeDictionary(Company obj)
     {
-        throw new NotImplementedException();
+        if (obj == null)
+        {
+            throw new ArgumentNullException(nameof(obj), "Parameter 'obj' cannot be null.");
+        }
+
+        return JsonSerializer.Serialize(obj.Domains, new JsonSerializerOptions
+        {
+            DictionaryKeyPolicy = JsonNamingPolicy.CamelCase,
+        });
     }
 
     public static string SerializeEnum(Company obj)
